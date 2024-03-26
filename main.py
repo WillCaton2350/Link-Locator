@@ -1,15 +1,20 @@
-from config.data import urls, nums
+from config.data import urls, nums, time_altered
 from urllib.error import HTTPError
 from bs4 import BeautifulSoup
 import requests
 import logging
-import ssl
 
 class parser:
         @staticmethod
-        def get_subdomains():
-            ssl._create_default_https_context = ssl.create_default_context
+        def main():
             try:
+                print('Loading...')
+                time_altered.time_buffer(1)
+                print("""
+                    ////////  W I L L C A T O N J R /////////
+                    ----------------------------------------
+                      SUBDOMAIN - SUBDIRECTORY ENUMERATION
+                    """)
                 for i in range(nums.num_executions):
                     with open(f'subdomains{i}.csv', 'w') as file:
                         for url in urls.url_list: 
@@ -24,3 +29,8 @@ class parser:
                                 logging.error(f"Failed to fetch URL: {url}, Error: {err}")
             except Exception as err:
                 logging.error(err)
+
+if __name__ == "__main__":
+    func = parser()
+    func.main()
+    print('Finished')
