@@ -1,4 +1,4 @@
-#!/Users/administrator/Desktop/Projects/RequestsProjects/Rumble-Requests-Bot/env/bin/python3
+#!/Users/administrator/Desktop/Projects/RequestsProjects/SubdomainFinder-Requests-Bot/env/bin/python3
 # -*- coding: utf-8 -*-
 import re
 import sys

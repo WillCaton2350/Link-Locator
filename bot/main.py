@@ -6,20 +6,21 @@ import logging
 import ssl
 
 class parser:
-    @staticmethod
-    def get_subdomains():
-        ssl._create_default_https_context = ssl.create_default_context
-        try:
-            with open('subdomains.csv', 'w') as file:
-                for key, value in urls.url_dict.items(): 
-                    try:
-                        response = requests.get(value)
-                        response.raise_for_status()  
-                        soup = BeautifulSoup(response.content, 'html.parser')
-                        for link in soup.find_all('a'):
-                            file.writelines(link.get('href') + '\n'+ '\n')
-                    except HTTPError as err:
-                        logging.error(f"Failed to fetch URL: {value}, Error: {err}")
-                        nums.retries += 1
-        except Exception as e:
-            logging.error(e)
+        @staticmethod
+        def get_subdomains():
+            ssl._create_default_https_context = ssl.create_default_context
+            try:
+                for i in range(nums.num_executions):
+                    with open(f'subdomains{i}.csv', 'w') as file:
+                        for url in urls.url_list: 
+                            try:
+                                value = urls.url_list[i]
+                                response = requests.get(value)
+                                response.raise_for_status()
+                                soup = BeautifulSoup(response.content, 'html.parser')
+                                for link in soup.find_all('a'):
+                                    file.writelines(link.get('href') + '\n'+ '\n')
+                            except HTTPError as err:
+                                logging.error(f"Failed to fetch URL: {url}, Error: {err}")
+            except Exception as err:
+                logging.error(err)

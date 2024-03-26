@@ -29,7 +29,7 @@ end
 # Unset irrelevant variables.
 deactivate nondestructive
 
-set -gx VIRTUAL_ENV "/Users/administrator/Desktop/Projects/RequestsProjects/Rumble-Requests-Bot/env"
+set -gx VIRTUAL_ENV "/Users/administrator/Desktop/Projects/RequestsProjects/SubdomainFinder-Requests-Bot/env"
 
 set -gx _OLD_VIRTUAL_PATH $PATH
 set -gx PATH "$VIRTUAL_ENV/bin" $PATH
