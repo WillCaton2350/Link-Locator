@@ -2,7 +2,7 @@ URL ENUMERATION TOOL
 
 Bio:
 
-    Locates various subdomains and subdirectories from an allowed total of 3 websites, and outputs them to separate CSV files.
+    Locates various subdomains and subdirectories from an allowed total of 3 websites, and outputs them to separate     CSV files.
 
 Dependencies:
 
